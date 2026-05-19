@@ -1,0 +1,77 @@
+{
+  "name": "@soybeanjs/oxc-config",
+  "version": "0.0.0",
+  "description": "SoybeanJS's oxlint and oxfmt config",
+  "keywords": [
+    "eslint",
+    "oxfmt",
+    "oxlint",
+    "prettier",
+    "soybeanjs"
+  ],
+  "homepage": "https://github.com/soybeanjs/oxc-config",
+  "bugs": {
+    "url": "https://github.com/soybeanjs/oxc-config/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Soybean",
+    "email": "soybeanjs@outlook.com",
+    "url": "https://github.com/soybeanjs"
+  },
+  "repository": {
+    "url": "https://github.com/soybeanjs/oxc-config.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./import-type-order": {
+      "import": "./dist/import-type-order.js",
+      "require": "./dist/import-type-order.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "commit": "soy git-commit",
+    "lint": "oxlint --fix",
+    "fmt": "oxfmt",
+    "prepare": "simple-git-hooks",
+    "publish-pkg": "pnpm publish --access public",
+    "release": "soy release",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "upkg": "soy ncu"
+  },
+  "devDependencies": {
+    "@soybeanjs/cli": "^1.7.2",
+    "@soybeanjs/oxc-config": "link:dist",
+    "@types/node": "^25.9.0",
+    "lint-staged": "^17.0.5",
+    "oxfmt": "^0.51.0",
+    "oxlint": "^1.66.0",
+    "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.22.0",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "pnpm soy git-commit-verify",
+    "pre-commit": "pnpm typecheck && pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "oxlint . --fix && oxfmt"
+  },
+  "packageManager": "pnpm@11.1.3"
+}
