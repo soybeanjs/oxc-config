@@ -27,7 +27,7 @@ pnpm add -D @soybeanjs/oxc-config oxfmt oxlint
 在项目根目录创建 `oxfmt.config.ts`：
 
 ```ts
-import { fmt } from "@soybeanjs/oxc-config";
+import { fmt } from '@soybeanjs/oxc-config';
 
 export default fmt;
 ```
@@ -35,7 +35,7 @@ export default fmt;
 也可以在此基础上扩展：
 
 ```ts
-import { fmt } from "@soybeanjs/oxc-config";
+import { fmt } from '@soybeanjs/oxc-config';
 
 export default {
   ...fmt,
@@ -95,7 +95,7 @@ Internal 别名排序层级（`order.json`）：
 在项目根目录创建 `oxlint.config.ts`：
 
 ```ts
-import { lint } from "@soybeanjs/oxc-config";
+import { lint } from '@soybeanjs/oxc-config';
 
 export default lint;
 ```
@@ -115,12 +115,12 @@ export default lint;
 
 ```ts
 // ✅ 正确
-import { ref } from "vue";
-import type { Ref } from "vue";
+import { ref } from 'vue';
+import type { Ref } from 'vue';
 
 // ❌ 错误
-import type { Ref } from "vue";
-import { ref } from "vue";
+import type { Ref } from 'vue';
+import { ref } from 'vue';
 ```
 
 在 `oxlint.config.ts` 中启用：
@@ -128,13 +128,13 @@ import { ref } from "vue";
 (导出的lint默认已经包含了插件和规则，这里仅展示如何覆盖或添加规则)
 
 ```ts
-import { lint } from "@soybeanjs/oxc-config";
+import { lint } from '@soybeanjs/oxc-config';
 
 export default {
   ...lint,
-  jsPlugins: ["@soybeanjs/oxc-config/import-type-order"],
+  jsPlugins: ['@soybeanjs/oxc-config/import-type-order'],
   rules: {
-    "import-type-order/type-after-value": "warn"
+    'import-type-order/type-after-value': 'warn'
   }
 };
 ```

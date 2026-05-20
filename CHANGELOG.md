@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## [v0.0.2](https://github.com/soybeanjs/oxc-config/compare/v0.0.1...v0.0.2) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🎨 Styles
@@ -20,4 +19,3 @@
 ### &nbsp;&nbsp;&nbsp;❤️ Contributors
 
 [![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
-

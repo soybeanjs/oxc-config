@@ -46,8 +46,8 @@
   "scripts": {
     "build": "tsdown",
     "commit": "soy git-commit",
-    "lint": "oxlint --fix",
     "fmt": "oxfmt",
+    "lint": "oxlint --fix",
     "prepare": "simple-git-hooks",
     "publish-pkg": "pnpm publish --access public",
     "release": "soy release",

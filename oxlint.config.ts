@@ -1,3 +1,3 @@
-import { lint } from "@soybeanjs/oxc-config";
+import { lint } from '@soybeanjs/oxc-config';
 
 export default lint;

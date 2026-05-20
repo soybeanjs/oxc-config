@@ -27,7 +27,7 @@ pnpm add -D @soybeanjs/oxc-config oxfmt oxlint
 Create `oxfmt.config.ts` at project root:
 
 ```ts
-import { fmt } from "@soybeanjs/oxc-config";
+import { fmt } from '@soybeanjs/oxc-config';
 
 export default fmt;
 ```
@@ -35,7 +35,7 @@ export default fmt;
 You can also extend it:
 
 ```ts
-import { fmt } from "@soybeanjs/oxc-config";
+import { fmt } from '@soybeanjs/oxc-config';
 
 export default {
   ...fmt,
@@ -95,7 +95,7 @@ Config (config, setting, constants...)
 Create `oxlint.config.ts` at project root:
 
 ```ts
-import { lint } from "@soybeanjs/oxc-config";
+import { lint } from '@soybeanjs/oxc-config';
 
 export default lint;
 ```
@@ -115,24 +115,24 @@ A custom oxlint JS plugin that ensures `import type` always comes after `import`
 
 ```ts
 // ✅ Correct
-import { ref } from "vue";
-import type { Ref } from "vue";
+import { ref } from 'vue';
+import type { Ref } from 'vue';
 
 // ❌ Incorrect
-import type { Ref } from "vue";
-import { ref } from "vue";
+import type { Ref } from 'vue';
+import { ref } from 'vue';
 ```
 
 The exported `lint` config already includes this plugin and rule. To override or extend:
 
 ```ts
-import { lint } from "@soybeanjs/oxc-config";
+import { lint } from '@soybeanjs/oxc-config';
 
 export default {
   ...lint,
-  jsPlugins: ["@soybeanjs/oxc-config/import-type-order"],
+  jsPlugins: ['@soybeanjs/oxc-config/import-type-order'],
   rules: {
-    "import-type-order/type-after-value": "warn"
+    'import-type-order/type-after-value': 'warn'
   }
 };
 ```

@@ -16,7 +16,7 @@
  * 也兼容 `import typeof`（Flow 语法）。
  */
 function isTypeImport(node) {
-  return node.importKind === "type" || node.importKind === "typeof";
+  return node.importKind === 'type' || node.importKind === 'typeof';
 }
 
 /**
@@ -37,11 +37,11 @@ function getStartWithComments(node, sourceCode) {
 
 const rule = {
   meta: {
-    type: "layout",
-    fixable: "code",
+    type: 'layout',
+    fixable: 'code',
     docs: {
-      description: "Ensure value imports come before type imports for the same module source.",
-      url: "https://github.com/soybeanjs/oxfmt-import-order"
+      description: 'Ensure value imports come before type imports for the same module source.',
+      url: 'https://github.com/soybeanjs/oxfmt-import-order'
     },
     messages: {
       typeBeforeValue: 'Type import from "{{source}}" must be placed after its value import.'
@@ -53,13 +53,13 @@ const rule = {
     const sourceCode = context.sourceCode;
 
     return {
-      "Program:exit"() {
+      'Program:exit'() {
         const body = sourceCode.ast.body;
 
         // 收集所有 ImportDeclaration（按源代码顺序）
         const allImports = [];
         for (let i = 0; i < body.length; i++) {
-          if (body[i].type === "ImportDeclaration") {
+          if (body[i].type === 'ImportDeclaration') {
             allImports.push({ node: body[i], bodyIndex: i });
           }
         }
@@ -120,7 +120,7 @@ const rule = {
 
           context.report({
             node: firstNode,
-            messageId: "typeBeforeValue",
+            messageId: 'typeBeforeValue',
             data: { source },
             fix(fixer) {
               // 收集排序后的节点文本及其前导注释
@@ -151,7 +151,7 @@ const rule = {
                     parts.push(sep);
                   } else {
                     // 原顺序中不相邻，使用换行作为分隔
-                    parts.push("\n");
+                    parts.push('\n');
                   }
                 }
 
@@ -161,7 +161,7 @@ const rule = {
               const rangeStart = getStartWithComments(firstNode, sourceCode);
               const rangeEnd = lastNode.range[1];
 
-              return fixer.replaceTextRange([rangeStart, rangeEnd], parts.join(""));
+              return fixer.replaceTextRange([rangeStart, rangeEnd], parts.join(''));
             }
           });
         }
@@ -176,10 +176,10 @@ const rule = {
 
 const plugin = {
   meta: {
-    name: "import-type-order"
+    name: 'import-type-order'
   },
   rules: {
-    "type-after-value": rule
+    'type-after-value': rule
   }
 };
 

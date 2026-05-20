@@ -1,2 +1,2 @@
-export { fmt } from "./oxfmt";
-export { lint } from "./oxlint";
+export { fmt } from './oxfmt';
+export { lint } from './oxlint';
