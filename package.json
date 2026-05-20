@@ -1,6 +1,6 @@
 {
   "name": "@soybeanjs/oxc-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "SoybeanJS's oxlint and oxfmt config",
   "keywords": [
     "eslint",

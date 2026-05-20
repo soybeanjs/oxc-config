@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.0.3](https://github.com/soybeanjs/oxc-config/compare/v0.0.2...v0.0.3) (2026-05-20)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- **order**: update external dependencies patterns and improve group handling &nbsp;-&nbsp; by @soybeanjs [<samp>(11ca9)</samp>](https://github.com/soybeanjs/oxc-config/commit/11ca919)
+
+### &nbsp;&nbsp;&nbsp;🎨 Styles
+
+- **projects**: format code &nbsp;-&nbsp; by @soybeanjs [<samp>(2797e)</samp>](https://github.com/soybeanjs/oxc-config/commit/2797ea9)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.0.2](https://github.com/soybeanjs/oxc-config/compare/v0.0.1...v0.0.2) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🎨 Styles
