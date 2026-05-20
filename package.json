@@ -59,7 +59,7 @@
   "devDependencies": {
     "@soybeanjs/cli": "^1.7.2",
     "@soybeanjs/oxc-config": "link:dist",
-    "@types/node": "^25.9.0",
+    "@types/node": "^25.9.1",
     "lint-staged": "^17.0.5",
     "oxfmt": "^0.51.0",
     "oxlint": "^1.66.0",
