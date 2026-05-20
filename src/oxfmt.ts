@@ -61,7 +61,7 @@ export const fmt: OxfmtConfig = {
   trailingComma: 'none',
   arrowParens: 'avoid',
   htmlWhitespaceSensitivity: 'ignore',
-  experimentalSortPackageJson: {
+  sortPackageJson: {
     sortScripts: true
   },
   sortImports: {
