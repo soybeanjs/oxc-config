@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.0.5](https://github.com/soybeanjs/oxc-config/compare/v0.0.4...v0.0.5) (2026-05-20)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **order**: add new external patterns for rolldown and unplugin-vue &nbsp;-&nbsp; by @soybeanjs [<samp>(142dc)</samp>](https://github.com/soybeanjs/oxc-config/commit/142dceb)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.0.4](https://github.com/soybeanjs/oxc-config/compare/v0.0.3...v0.0.4) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
