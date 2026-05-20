@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.1.2](https://github.com/soybeanjs/oxc-config/compare/v0.1.1...v0.1.2) (2026-05-20)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **oxlint**: add missing rule for vue/no-undef-properties &nbsp;-&nbsp; by @soybeanjs [<samp>(a162b)</samp>](https://github.com/soybeanjs/oxc-config/commit/a162ba3)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.1.1](https://github.com/soybeanjs/oxc-config/compare/v0.1.0...v0.1.1) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
