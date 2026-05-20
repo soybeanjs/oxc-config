@@ -12,7 +12,7 @@ Shared [oxlint](https://oxc.rs/docs/guide/usage/linter.html) and [oxfmt](https:/
 - 🚀 **oxfmt formatter config** — Unified code style with fine-grained import sorting groups
 - 🔍 **oxlint linter config** — Integrated with ESLint / TypeScript / Unicorn / Vue plugins
 - 📦 **Import sorting** — Auto-group and sort imports by dependency layer
-- 🎯 **type-before-value rule** — Custom oxlint JS plugin ensuring `import type` comes after `import` for the same module
+- 🎯 **custom import plugin** — Includes auto-merging duplicate imports, disallowing inline type imports, and enforcing value imports before type imports
 
 ## Installation
 
@@ -109,9 +109,35 @@ export default lint;
 - **import** — Import/Export rules
 - **vue** — Vue SFC rules
 
-#### Custom Rule: import-type-order
+#### Custom Rules: soybeanjs-import
 
-A custom oxlint JS plugin that ensures `import type` always comes after `import` for the same module:
+This config ships with a custom oxlint JS plugin loaded from `@soybeanjs/oxc-config/plugins/import`, with 3 built-in rules:
+
+- `soybeanjs-import/merge-duplicates`: keep at most one value import and one type import per module, and auto-merge duplicate imports
+- `soybeanjs-import/no-inline-type-import`: disallow inline type imports like `import { type Foo }`, and auto-convert them to top-level `import type`
+- `soybeanjs-import/type-after-value`: ensure value imports come before type imports for the same module
+
+Examples:
+
+```ts
+// ✅ After fixing
+import { a, b } from './types';
+import type { DemoTest } from './types';
+
+// ❌ Duplicate imports
+import { b } from './types';
+import { a } from './types';
+import type { DemoTest } from './types';
+```
+
+```ts
+// ✅ After fixing
+import { a } from './types';
+import type { DemoTest } from './types';
+
+// ❌ Inline type import
+import { a, type DemoTest } from './types';
+```
 
 ```ts
 // ✅ Correct
@@ -130,9 +156,11 @@ import { lint } from '@soybeanjs/oxc-config';
 
 export default {
   ...lint,
-  jsPlugins: ['@soybeanjs/oxc-config/import-type-order'],
+  jsPlugins: ['@soybeanjs/oxc-config/plugins/import'],
   rules: {
-    'import-type-order/type-after-value': 'warn'
+    'soybeanjs-import/merge-duplicates': 'warn',
+    'soybeanjs-import/no-inline-type-import': 'warn',
+    'soybeanjs-import/type-after-value': 'warn'
   }
 };
 ```

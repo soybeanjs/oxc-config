@@ -12,7 +12,7 @@ SoybeanJS 的共享 [oxlint](https://oxc.rs/docs/guide/usage/linter.html) 和 [o
 - 🚀 **oxfmt 格式化配置** — 统一代码风格，包含精细的 import 排序分组
 - 🔍 **oxlint 代码检查** — 集成 ESLint / TypeScript / Unicorn / Vue 等插件
 - 📦 **Import 排序** — 按依赖层级自动分组排序 external 和 internal import
-- 🎯 **type-before-value 规则** — 自定义 oxlint JS 插件，确保同模块 `import type` 在 `import` 之后
+- 🎯 **自定义 import 插件** — 附带自动合并重复导入、禁止 inline type import、保证 value import 在 type import 之前
 
 ## 安装
 
@@ -109,9 +109,35 @@ export default lint;
 - **import** — Import/Export 规则
 - **vue** — Vue SFC 规则
 
-#### 自定义规则：import-type-order
+#### 自定义规则：soybeanjs-import
 
-本配置附带一个 oxlint JS 插件，确保同一模块的 `import type` 始终在 `import` 之后：
+本配置附带一个 oxlint JS 插件，加载路径为 `@soybeanjs/oxc-config/plugins/import`，内置 3 条规则：
+
+- `soybeanjs-import/merge-duplicates`：同一模块最多保留一条 value import 和一条 type import，并自动合并重复导入
+- `soybeanjs-import/no-inline-type-import`：禁止 `import { type Foo }` 这种 inline type import，自动改成顶层 `import type`
+- `soybeanjs-import/type-after-value`：同一模块内要求 value import 在前，type import 在后
+
+示例：
+
+```ts
+// ✅ 修复后
+import { a, b } from './types';
+import type { DemoTest } from './types';
+
+// ❌ 重复导入
+import { b } from './types';
+import { a } from './types';
+import type { DemoTest } from './types';
+```
+
+```ts
+// ✅ 修复后
+import { a } from './types';
+import type { DemoTest } from './types';
+
+// ❌ inline type import
+import { a, type DemoTest } from './types';
+```
 
 ```ts
 // ✅ 正确
@@ -132,9 +158,11 @@ import { lint } from '@soybeanjs/oxc-config';
 
 export default {
   ...lint,
-  jsPlugins: ['@soybeanjs/oxc-config/import-type-order'],
+  jsPlugins: ['@soybeanjs/oxc-config/plugins/import'],
   rules: {
-    'import-type-order/type-after-value': 'warn'
+    'soybeanjs-import/merge-duplicates': 'warn',
+    'soybeanjs-import/no-inline-type-import': 'warn',
+    'soybeanjs-import/type-after-value': 'warn'
   }
 };
 ```
