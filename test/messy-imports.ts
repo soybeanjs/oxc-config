@@ -1,9 +1,10 @@
+// oxlint-disable no-unused-vars
 // @ts-nocheck
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { defineConfig } from 'vite';
-import { down } from 'tsdown';
+import { down, down2 } from 'tsdown';
 import { createApp } from 'vue';
 import type { ComputedRef } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';

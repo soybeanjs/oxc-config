@@ -35,9 +35,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./import-type-order": {
-      "import": "./dist/import-type-order.js",
-      "require": "./dist/import-type-order.js"
+    "./plugins/*": {
+      "types": "./dist/plugins/*.d.ts",
+      "import": "./dist/plugins/*.js",
+      "require": "./dist/plugins/*.js"
     }
   },
   "publishConfig": {

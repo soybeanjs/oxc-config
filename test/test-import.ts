@@ -1,3 +1,4 @@
+// oxlint-disable no-unused-vars
 // @ts-nocheck
 
 import path from 'node:path';

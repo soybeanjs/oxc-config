@@ -6,12 +6,22 @@ export const lint: OxlintConfig = {
     suspicious: 'error'
   },
   plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import', 'vue'],
-  jsPlugins: ['@soybeanjs/oxc-config/import-type-order'],
+  jsPlugins: ['@soybeanjs/oxc-config/plugins/import'],
   rules: {
+    'soybeanjs-import/merge-duplicates': 'warn',
+    'soybeanjs-import/no-inline-type-import': 'warn',
+    'soybeanjs-import/type-after-value': 'warn',
+    'import/newline-after-import': 'warn',
     'import/no-unassigned-import': 'off',
-    'import-type-order/type-after-value': 'warn',
     'no-underscore-dangle': 'off',
-    'no-unused-vars': 'off',
+    'typescript/consistent-type-imports': [
+      'error',
+      {
+        disallowTypeAnnotations: false,
+        prefer: 'type-imports',
+        fixStyle: 'separate-type-imports'
+      }
+    ],
     'unicorn/consistent-function-scoping': 'off',
     'unicorn/no-array-reverse': 'off',
     'unicorn/no-array-sort': 'off',

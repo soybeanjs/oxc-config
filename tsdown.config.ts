@@ -1,7 +1,10 @@
 import { defineConfig } from 'tsdown';
 
 export default defineConfig({
-  entry: ['src/index.ts', 'src/import-type-order.js'],
+  entry: {
+    index: 'src/index.ts',
+    'plugins/import': 'src/plugins/import/index.ts'
+  },
   platform: 'neutral',
   deps: {
     neverBundle: ['oxlint', 'oxfmt']
