@@ -1,9 +1,11 @@
-import type { OxfmtConfig, CustomGroupItemConfig } from "oxfmt";
-import order from "./order.json" with { type: "json" };
+import type { OxfmtConfig, CustomGroupItemConfig } from 'oxfmt';
+import order from './order.json' with { type: 'json' };
 
 const customGroups: CustomGroupItemConfig[] = [];
 const externalGroupNames: string[] = [];
 const internalGroupNames: string[] = [];
+const parentGroupNames: string[] = [];
+const siblingGroupNames: string[] = [];
 
 order.external.forEach((item, index) => {
   const groupName = `external-${index}`;
@@ -12,7 +14,7 @@ order.external.forEach((item, index) => {
   customGroups.push({
     groupName,
     elementNamePattern: [item],
-    selector: "external"
+    selector: 'external'
   });
 });
 
@@ -23,16 +25,32 @@ order.internal.forEach((item, index) => {
   customGroups.push({
     groupName,
     elementNamePattern: [item],
-    selector: "internal"
+    selector: 'internal'
+  });
+
+  const parentGroupName = `parent-${index}`;
+  parentGroupNames.push(parentGroupName);
+  customGroups.push({
+    groupName: parentGroupName,
+    elementNamePattern: [item.replace('@/', '**/')],
+    selector: 'parent'
+  });
+
+  const siblingGroupName = `sibling-${index}`;
+  siblingGroupNames.push(siblingGroupName);
+  customGroups.push({
+    groupName: siblingGroupName,
+    elementNamePattern: [item.replace('@/', '**/')],
+    selector: 'sibling'
   });
 });
 
 export const fmt: OxfmtConfig = {
   printWidth: 120,
   singleQuote: true,
-  trailingComma: "none",
-  arrowParens: "avoid",
-  htmlWhitespaceSensitivity: "ignore",
+  trailingComma: 'none',
+  arrowParens: 'avoid',
+  htmlWhitespaceSensitivity: 'ignore',
   experimentalSortPackageJson: {
     sortScripts: true
   },
@@ -40,19 +58,21 @@ export const fmt: OxfmtConfig = {
     newlinesBetween: false,
     customGroups,
     groups: [
-      "builtin",
+      'builtin',
       ...externalGroupNames,
-      "external",
-      "side_effect",
-      "side_effect_style",
+      'external',
+      'side_effect',
+      'side_effect_style',
       ...internalGroupNames,
-      "internal",
-      "subpath",
-      "parent",
-      "sibling",
-      "index",
-      "style",
-      "unknown"
+      'internal',
+      'subpath',
+      ...parentGroupNames,
+      'parent',
+      ...siblingGroupNames,
+      'sibling',
+      'index',
+      'style',
+      'unknown'
     ]
   }
 };
