@@ -16,6 +16,16 @@ order.external.forEach((item, index) => {
     elementNamePattern: [item],
     selector: 'external'
   });
+
+  if (item.endsWith('-**')) {
+    const _groupName = `external-subpath-${index}`;
+    externalGroupNames.push(_groupName);
+    customGroups.push({
+      groupName: _groupName,
+      elementNamePattern: [item.concat('/**')],
+      selector: 'external'
+    });
+  }
 });
 
 order.internal.forEach((item, index) => {
