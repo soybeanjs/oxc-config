@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.1.1](https://github.com/soybeanjs/oxc-config/compare/v0.1.0...v0.1.1) (2026-05-20)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **order**: add new external and internal dependencies for hono and valibot &nbsp;-&nbsp; by @soybeanjs [<samp>(c1244)</samp>](https://github.com/soybeanjs/oxc-config/commit/c124418)
+
+### &nbsp;&nbsp;&nbsp;📖 Documentation
+
+- **readme**: update custom import plugin description and examples &nbsp;-&nbsp; by @soybeanjs [<samp>(d2b4d)</samp>](https://github.com/soybeanjs/oxc-config/commit/d2b4d42)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.1.0](https://github.com/soybeanjs/oxc-config/compare/v0.0.5...v0.1.0) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
