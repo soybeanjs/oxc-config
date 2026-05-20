@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.1.0](https://github.com/soybeanjs/oxc-config/compare/v0.0.5...v0.1.0) (2026-05-20)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **import**: implement new import plugin with enhanced rules and shared utilities &nbsp;-&nbsp; by @soybeanjs [<samp>(0bbc9)</samp>](https://github.com/soybeanjs/oxc-config/commit/0bbc9dc)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **deps**: update deps &nbsp;-&nbsp; by @soybeanjs [<samp>(34933)</samp>](https://github.com/soybeanjs/oxc-config/commit/349331f)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.0.5](https://github.com/soybeanjs/oxc-config/compare/v0.0.4...v0.0.5) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
