@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.0.4](https://github.com/soybeanjs/oxc-config/compare/v0.0.3...v0.0.4) (2026-05-20)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **order**: enhance external patterns and add subpath grouping &nbsp;-&nbsp; by @soybeanjs [<samp>(aa964)</samp>](https://github.com/soybeanjs/oxc-config/commit/aa9648e)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **package**: add public access to publishConfig &nbsp;-&nbsp; by @soybeanjs [<samp>(b86f9)</samp>](https://github.com/soybeanjs/oxc-config/commit/b86f94a)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.0.3](https://github.com/soybeanjs/oxc-config/compare/v0.0.2...v0.0.3) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🛠 Optimizations
