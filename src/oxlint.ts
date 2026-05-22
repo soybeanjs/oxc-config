@@ -27,7 +27,6 @@ export const lint: OxlintConfig = {
     'unicorn/no-array-sort': 'off',
     'unicorn/no-empty-file': 'off',
     'unicorn/require-module-specifiers': 'off',
-    'vue/no-undef-properties': 'off',
     'vue/prefer-import-from-vue': 'off'
   }
 };
