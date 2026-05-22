@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.1.4](https://github.com/soybeanjs/oxc-config/compare/v0.1.3...v0.1.4) (2026-05-22)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- **order**: add entries for 'vite-plus' and 'void' in external dependencies &nbsp;-&nbsp; by @soybeanjs [<samp>(a47f2)</samp>](https://github.com/soybeanjs/oxc-config/commit/a47f261)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.1.3](https://github.com/soybeanjs/oxc-config/compare/v0.1.2...v0.1.3) (2026-05-22)
 
 ### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
