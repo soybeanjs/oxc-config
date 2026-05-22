@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.1.3](https://github.com/soybeanjs/oxc-config/compare/v0.1.2...v0.1.3) (2026-05-22)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **oxlint**: remove not exit rule 'vue/no-undef-properties' &nbsp;-&nbsp; by @soybeanjs [<samp>(b3d66)</samp>](https://github.com/soybeanjs/oxc-config/commit/b3d66bd)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.1.2](https://github.com/soybeanjs/oxc-config/compare/v0.1.1...v0.1.2) (2026-05-20)
 
 ### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
