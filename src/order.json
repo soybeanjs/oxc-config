@@ -1,7 +1,12 @@
 {
   "external": [
+    "vite-plus",
+    "vite-plus/**",
     "vite",
     "@vitejs/**",
+    "void",
+    "void/**",
+    "@void/**",
     "vite-**",
     "rolldown",
     "tsdown",
