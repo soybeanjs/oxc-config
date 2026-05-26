@@ -13,15 +13,4 @@ export {
   stripInlineTypeKeyword
 } from './imports';
 export { getStartWithComments } from './source';
-export type {
-  BaseNode,
-  FixerLike,
-  ImportDeclarationNode,
-  ImportGroupItem,
-  ImportStatementParts,
-  PluginLike,
-  RuleContextLike,
-  RuleLike,
-  SourceCodeLike,
-  VisitorLike
-} from './types';
+export type { ImportDeclaration, ImportGroupItem } from './types';

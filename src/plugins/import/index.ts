@@ -1,7 +1,7 @@
-import type { PluginLike } from './shared';
+import { definePlugin } from '@oxlint/plugins';
 import { mergeDuplicatesRule, noInlineTypeImportRule, typeAfterValueRule } from './rules';
 
-const plugin: PluginLike = {
+const plugin = definePlugin({
   meta: {
     name: 'soybeanjs-import'
   },
@@ -10,6 +10,6 @@ const plugin: PluginLike = {
     'no-inline-type-import': noInlineTypeImportRule,
     'type-after-value': typeAfterValueRule
   }
-};
+});
 
 export default plugin;

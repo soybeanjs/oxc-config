@@ -1,7 +1,7 @@
+import { defineRule } from '@oxlint/plugins';
 import { buildTypeImportStatement, buildValueImportStatement, canFixInlineTypeImport } from '../shared';
-import type { RuleLike } from '../shared';
 
-export const noInlineTypeImportRule: RuleLike = {
+export const noInlineTypeImportRule = defineRule({
   meta: {
     type: 'layout',
     fixable: 'code',
@@ -40,4 +40,4 @@ export const noInlineTypeImportRule: RuleLike = {
       }
     };
   }
-};
+});

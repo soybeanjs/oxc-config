@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@oxlint/plugins':
+        specifier: ^1.66.0
+        version: 1.66.0
       '@soybeanjs/cli':
         specifier: ^1.7.2
         version: 1.7.2
@@ -497,6 +500,10 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [win32]
+
+  '@oxlint/plugins@1.66.0':
+    resolution: {integrity: sha512-dVw9+y1tB9rDObtjzsDhxRsreZrEoKohujt+w/sZ09+kmA5yI/ORQJFPR/xSC+jpw0TWmE6gnb6N1lD/z7uElA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   '@quansync/fs@1.0.0':
     resolution: {integrity: sha512-4TJ3DFtlf1L5LDMaM6CanJ/0lckGNtJcMjQ1NAV6zDmA0tEHKZtxNKin8EgPaVX1YzljbxckyT2tJrpQKAtngQ==}
@@ -1437,6 +1444,8 @@ snapshots:
 
   '@oxlint/binding-win32-x64-msvc@1.66.0':
     optional: true
+
+  '@oxlint/plugins@1.66.0': {}
 
   '@quansync/fs@1.0.0':
     dependencies:

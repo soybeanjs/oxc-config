@@ -1,34 +1,33 @@
+import type { ESTree } from '@oxlint/plugins';
 import type {
-  ImportDeclarationNode,
-  ImportDeclarationSpecifier,
   ImportGroupItem,
-  ImportKind,
-  ImportStatementParts,
-  ImportSpecifierNode,
-  SourceCodeLike
+  SourceCode,
+  ImportDeclaration,
+  ImportDeclarationSpecifier,
+  ImportStatementParts
 } from './types';
 
-function isTypeKind(kind: ImportKind): boolean {
-  return kind === 'type' || kind === 'typeof';
+function isTypeKind(kind?: ESTree.ImportOrExportKind): boolean {
+  return kind === 'type';
 }
 
-export function isImportDeclaration(node: unknown): node is ImportDeclarationNode {
-  return Boolean(node) && typeof node === 'object' && (node as ImportDeclarationNode).type === 'ImportDeclaration';
+export function isImportDeclaration(node: unknown): node is ImportDeclaration {
+  return Boolean(node) && typeof node === 'object' && (node as ImportDeclaration).type === 'ImportDeclaration';
 }
 
-export function isTypeImport(node: Pick<ImportDeclarationNode, 'importKind'>): boolean {
+export function isTypeImport(node: Pick<ImportDeclaration, 'importKind'>): boolean {
   return isTypeKind(node.importKind);
 }
 
-export function isInlineTypeSpecifier(node: ImportDeclarationSpecifier): node is ImportSpecifierNode {
+export function isInlineTypeSpecifier(node: ImportDeclarationSpecifier): node is ESTree.ImportSpecifier {
   return node.type === 'ImportSpecifier' && isTypeKind(node.importKind);
 }
 
-export function getInlineTypeSpecifiers(node: ImportDeclarationNode): ImportSpecifierNode[] {
+export function getInlineTypeSpecifiers(node: ImportDeclaration): ESTree.ImportSpecifier[] {
   return (node.specifiers ?? []).filter(isInlineTypeSpecifier);
 }
 
-export function hasInlineTypeSpecifier(node: ImportDeclarationNode): boolean {
+export function hasInlineTypeSpecifier(node: ImportDeclaration): boolean {
   return !isTypeImport(node) && getInlineTypeSpecifiers(node).length > 0;
 }
 
@@ -47,8 +46,8 @@ export function buildImportStatement(options: {
 }
 
 export function buildNamedImportText(
-  specifiers: ImportSpecifierNode[],
-  sourceCode: SourceCodeLike,
+  specifiers: ESTree.ImportSpecifier[],
+  sourceCode: SourceCode,
   options: { stripTypeKeyword?: boolean } = {}
 ): string {
   const texts = specifiers.map(specifier => {
@@ -60,7 +59,7 @@ export function buildNamedImportText(
   return `{ ${texts.join(', ')} }`;
 }
 
-export function buildValueImportStatement(node: ImportDeclarationNode, sourceCode: SourceCodeLike): string | null {
+export function buildValueImportStatement(node: ImportDeclaration, sourceCode: SourceCode): string | null {
   const specifiers = node.specifiers ?? [];
   const defaultSpecifiers = specifiers
     .filter((specifier): specifier is Extract<ImportDeclarationSpecifier, { type: 'ImportDefaultSpecifier' }> => {
@@ -73,7 +72,7 @@ export function buildValueImportStatement(node: ImportDeclarationNode, sourceCod
     })
     .map(specifier => sourceCode.getText(specifier));
   const namedSpecifiers = specifiers.filter(
-    (specifier): specifier is ImportSpecifierNode =>
+    (specifier): specifier is ESTree.ImportSpecifier =>
       specifier.type === 'ImportSpecifier' && !isInlineTypeSpecifier(specifier)
   );
   const specifierTexts = [...defaultSpecifiers, ...namespaceSpecifiers];
@@ -93,7 +92,7 @@ export function buildValueImportStatement(node: ImportDeclarationNode, sourceCod
   });
 }
 
-export function buildTypeImportStatement(node: ImportDeclarationNode, sourceCode: SourceCodeLike): string | null {
+export function buildTypeImportStatement(node: ImportDeclaration, sourceCode: SourceCode): string | null {
   const inlineTypeSpecifiers = getInlineTypeSpecifiers(node);
 
   if (inlineTypeSpecifiers.length === 0) {
@@ -107,8 +106,8 @@ export function buildTypeImportStatement(node: ImportDeclarationNode, sourceCode
   });
 }
 
-export function canFixInlineTypeImport(node: ImportDeclarationNode): boolean {
-  return !isTypeImport(node) && node.specifiers != null && hasInlineTypeSpecifier(node) && node.withClause == null;
+export function canFixInlineTypeImport(node: ImportDeclaration): boolean {
+  return !isTypeImport(node) && node.specifiers != null && hasInlineTypeSpecifier(node);
 }
 
 function createImportStatementParts(): ImportStatementParts {
@@ -128,7 +127,7 @@ function pushUnique(values: string[], text: string): void {
 function appendSpecifierText(
   target: ImportStatementParts,
   specifier: ImportDeclarationSpecifier,
-  sourceCode: SourceCodeLike
+  sourceCode: SourceCode
 ): void {
   if (specifier.type === 'ImportDefaultSpecifier') {
     pushUnique(target.defaultImports, sourceCode.getText(specifier));
@@ -181,7 +180,7 @@ function buildImportFromParts(
   });
 }
 
-export function mergeImportGroup(group: ImportGroupItem[], sourceCode: SourceCodeLike): string[] | null {
+export function mergeImportGroup(group: ImportGroupItem[], sourceCode: SourceCode): string[] | null {
   if (group.length < 2) {
     return null;
   }
@@ -191,7 +190,7 @@ export function mergeImportGroup(group: ImportGroupItem[], sourceCode: SourceCod
   const sourceText = sourceCode.getText(group[0].node.source);
 
   for (const item of group) {
-    if (item.node.withClause != null || (item.node.specifiers?.length ?? 0) === 0) {
+    if ((item.node.specifiers?.length ?? 0) === 0) {
       return null;
     }
 
@@ -220,7 +219,7 @@ export function mergeImportGroup(group: ImportGroupItem[], sourceCode: SourceCod
   return mergedStatements;
 }
 
-export function collectImportGroups(sourceCode: SourceCodeLike): ImportGroupItem[][] {
+export function collectImportGroups(sourceCode: SourceCode): ImportGroupItem[][] {
   const allImports: ImportGroupItem[] = [];
 
   for (let index = 0; index < sourceCode.ast.body.length; index += 1) {

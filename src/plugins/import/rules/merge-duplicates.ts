@@ -1,7 +1,7 @@
+import { defineRule } from '@oxlint/plugins';
 import { collectImportGroups, getStartWithComments, mergeImportGroup } from '../shared';
-import type { RuleLike } from '../shared';
 
-export const mergeDuplicatesRule: RuleLike = {
+export const mergeDuplicatesRule = defineRule({
   meta: {
     type: 'layout',
     fixable: 'code',
@@ -47,4 +47,4 @@ export const mergeDuplicatesRule: RuleLike = {
       }
     };
   }
-};
+});

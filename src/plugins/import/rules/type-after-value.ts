@@ -1,7 +1,7 @@
+import { defineRule } from '@oxlint/plugins';
 import { collectImportGroups, getStartWithComments, isTypeImport } from '../shared';
-import type { RuleLike } from '../shared';
 
-export const typeAfterValueRule: RuleLike = {
+export const typeAfterValueRule = defineRule({
   meta: {
     type: 'layout',
     fixable: 'code',
@@ -103,4 +103,4 @@ export const typeAfterValueRule: RuleLike = {
       }
     };
   }
-};
+});
