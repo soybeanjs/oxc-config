@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.2.0](https://github.com/soybeanjs/oxc-config/compare/v0.1.4...v0.2.0) (2026-05-26)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **import**: integrate @oxlint/plugins and update import rules &nbsp;-&nbsp; by @soybeanjs [<samp>(aeca0)</samp>](https://github.com/soybeanjs/oxc-config/commit/aeca049)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.1.4](https://github.com/soybeanjs/oxc-config/compare/v0.1.3...v0.1.4) (2026-05-22)
 
 ### &nbsp;&nbsp;&nbsp;🛠 Optimizations
