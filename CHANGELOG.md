@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.2.1](https://github.com/soybeanjs/oxc-config/compare/v0.2.0...v0.2.1) (2026-06-01)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **lint**: add 'object-shorthand' rule with warning level &nbsp;-&nbsp; by @soybeanjs [<samp>(ecb91)</samp>](https://github.com/soybeanjs/oxc-config/commit/ecb91df)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **deps**: update deps &nbsp;-&nbsp; by @soybeanjs [<samp>(007e9)</samp>](https://github.com/soybeanjs/oxc-config/commit/007e901)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.2.0](https://github.com/soybeanjs/oxc-config/compare/v0.1.4...v0.2.0) (2026-05-26)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
