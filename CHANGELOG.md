@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.2.3](https://github.com/soybeanjs/oxc-config/compare/v0.2.2...v0.2.3) (2026-06-07)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **lint**: add 'prefer-template' rule with warning level &nbsp;-&nbsp; by @soybeanjs [<samp>(7e8ab)</samp>](https://github.com/soybeanjs/oxc-config/commit/7e8abdb)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.2.2](https://github.com/soybeanjs/oxc-config/compare/v0.2.1...v0.2.2) (2026-06-07)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
