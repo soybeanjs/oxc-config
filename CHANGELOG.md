@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.2.2](https://github.com/soybeanjs/oxc-config/compare/v0.2.1...v0.2.2) (2026-06-07)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **lint**: disable 'vue/no-reserved-component-names' rule &nbsp;-&nbsp; by @soybeanjs [<samp>(f1c8a)</samp>](https://github.com/soybeanjs/oxc-config/commit/f1c8a47)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **deps**: update deps &nbsp;-&nbsp; by @soybeanjs [<samp>(1ca4f)</samp>](https://github.com/soybeanjs/oxc-config/commit/1ca4fed)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.2.1](https://github.com/soybeanjs/oxc-config/compare/v0.2.0...v0.2.1) (2026-06-01)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
