@@ -15,6 +15,7 @@ export const lint: OxlintConfig = {
     'import/no-unassigned-import': 'off',
     'no-underscore-dangle': 'off',
     'object-shorthand': 'warn',
+    'prefer-template': 'warn',
     'typescript/consistent-type-imports': [
       'error',
       {
