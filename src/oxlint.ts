@@ -14,7 +14,14 @@ export const lint: OxlintConfig = {
     'import/newline-after-import': 'warn',
     'import/no-unassigned-import': 'off',
     'no-underscore-dangle': 'off',
-    'no-unused-vars': ['warn', { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' }],
+    'no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        varsIgnorePattern: '^_'
+      }
+    ],
     'object-shorthand': 'warn',
     'prefer-template': 'warn',
     'typescript/consistent-type-imports': [
