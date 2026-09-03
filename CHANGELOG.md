@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.2.5](https://github.com/soybeanjs/oxc-config/compare/v0.2.4...v0.2.5) (2026-09-04)
+
+### &nbsp;&nbsp;&nbsp;🛠 Optimizations
+
+- **projects**: add varsIgnorePattern to rule 'no-unused-vars' &nbsp;-&nbsp; by @soybeanjs [<samp>(d6ab2)</samp>](https://github.com/soybeanjs/oxc-config/commit/d6ab2fa)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.2.4](https://github.com/soybeanjs/oxc-config/compare/v0.2.3...v0.2.4) (2026-09-03)
 
 ### &nbsp;&nbsp;&nbsp;🚀 Features
