@@ -1,5 +1,6 @@
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vite-plus: latest
 allowBuilds:
-  esbuild: false
-  simple-git-hooks: false
 minimumReleaseAge: 0
 shamefullyHoist: true

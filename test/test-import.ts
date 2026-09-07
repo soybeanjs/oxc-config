@@ -9,7 +9,7 @@ import VueJsx from '@vitejs/plugin-vue-jsx';
 import VueDevtools from 'vite-plugin-vue-devtools';
 import MetaLayouts from 'vite-plugin-vue-meta-layouts';
 import type { RolldownPluginOption } from 'rolldown';
-import a from 'vitest';
+import type { Assertion } from 'vitest';
 import unpluginVue from 'unplugin-vue/rolldown';
 import Components from 'unplugin-vue-components/vite';
 import unpluginVueJsx from 'unplugin-vue-jsx/rolldown';

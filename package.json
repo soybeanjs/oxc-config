@@ -46,11 +46,10 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "tsdown",
+    "build": "vp pack",
     "commit": "soy git-commit",
-    "fmt": "oxfmt",
-    "lint": "oxlint --fix",
-    "prepare": "simple-git-hooks",
+    "fmt": "vp fmt",
+    "lint": "vp lint . --fix",
     "publish-pkg": "pnpm publish --access public",
     "release": "soy release",
     "typecheck": "tsc --noEmit --skipLibCheck",
@@ -61,20 +60,8 @@
     "@soybeanjs/cli": "^1.8.2",
     "@soybeanjs/oxc-config": "link:dist",
     "@types/node": "^26.4.1",
-    "lint-staged": "^17.5.0",
-    "oxfmt": "^0.66.0",
-    "oxlint": "^1.81.0",
-    "simple-git-hooks": "^2.14.0",
-    "tsdown": "^0.23.0",
-    "tsx": "^4.23.13",
-    "typescript": "^7.0.2"
-  },
-  "simple-git-hooks": {
-    "commit-msg": "pnpm soy git-commit-verify",
-    "pre-commit": "pnpm typecheck && pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "oxlint . --fix && oxfmt"
+    "typescript": "^7.0.2",
+    "vite-plus": "catalog:"
   },
   "packageManager": "pnpm@12.3.4"
 }
