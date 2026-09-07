@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite-plus';
-import { fmt, lint } from '@soybeanjs/oxc-config';
+import { fmt, lint } from './src';
 
 export default defineConfig({
   staged: {
