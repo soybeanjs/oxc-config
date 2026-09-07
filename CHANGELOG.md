@@ -1,5 +1,25 @@
 # Changelog
 
+## [v0.2.6](https://github.com/soybeanjs/oxc-config/compare/v0.2.5...v0.2.6) (2026-09-07)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **order**: add 'ubean' and 'nuxt' entries to external dependencies &nbsp;-&nbsp; by @soybeanjs [<samp>(1713f)</samp>](https://github.com/soybeanjs/oxc-config/commit/1713f7e)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **vite**: update import path for fmt and lint from relative source &nbsp;-&nbsp; by @soybeanjs [<samp>(92c21)</samp>](https://github.com/soybeanjs/oxc-config/commit/92c213b)
+
+### &nbsp;&nbsp;&nbsp;🏡 Chore
+
+- **config**: remove unused oxfmt and oxlint configuration files &nbsp;-&nbsp; by @soybeanjs [<samp>(886a5)</samp>](https://github.com/soybeanjs/oxc-config/commit/886a5a7)
+- **deps**: update deps &nbsp;-&nbsp; by @soybeanjs [<samp>(f74c0)</samp>](https://github.com/soybeanjs/oxc-config/commit/f74c080)
+- **projects**: migrate tsdown to vite-plus &nbsp;-&nbsp; by @soybeanjs [<samp>(1c082)</samp>](https://github.com/soybeanjs/oxc-config/commit/1c082a2)
+
+### &nbsp;&nbsp;&nbsp;❤️ Contributors
+
+[![soybeanjs](https://github.com/soybeanjs.png?size=48)](https://github.com/soybeanjs)&nbsp;&nbsp;
+
 ## [v0.2.5](https://github.com/soybeanjs/oxc-config/compare/v0.2.4...v0.2.5) (2026-09-04)
 
 ### &nbsp;&nbsp;&nbsp;🛠 Optimizations
